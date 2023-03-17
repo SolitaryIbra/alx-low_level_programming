@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
-#inclide <stdio.h>
+#include <stdio.h>
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
