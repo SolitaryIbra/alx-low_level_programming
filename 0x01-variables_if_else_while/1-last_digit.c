@@ -5,8 +5,9 @@
 * main - function extracts the last number in an integer and
 * checks if greater than 5 or else smaller or equal to 0
 *
-* Description: In main function checks the value of the last nummebr by moduling 
-* the initial number and checks if it is greater than the current number
+* Description: In main function checks the value of the last nummebr by
+* moduling the initial number and checks if it is greater 
+* than the current number
 * Return: 0
 *
 */
