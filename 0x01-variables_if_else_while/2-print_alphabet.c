@@ -13,8 +13,9 @@ char alpahbet[26] = "abcdefghijklmnopqrstuvwxyz";
 int i = 0;
 while (i < 26)
 {
-    putchar(alpahbet[i]);
-    i++;
+putchar(alpahbet[i]);
+i++;
 }
+putchar('\n')
 return (0);
 }
