@@ -13,7 +13,7 @@ int i = 0;
 while(i<26){
     putchar(alpahbet[i]);
     putchar('\n');
-    i++
+    i++;
 }
 return (0);
 }
