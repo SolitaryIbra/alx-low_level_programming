@@ -10,7 +10,7 @@ int main(void)
 {
 
 int ch = 97;
-while (ch < (97+26))
+while (ch < (97 + 26))
 {
 putchar(ch);
 ch++;
@@ -18,11 +18,13 @@ ch++;
 
 ch = 65;
 
-while (ch < (65+26))
+while (ch < (65 + 26))
 {
 putchar(ch);
 ch++;
 }
+
+putchar('\n');
 
 return (0);
 }
