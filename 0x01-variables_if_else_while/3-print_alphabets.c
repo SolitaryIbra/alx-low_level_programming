@@ -12,6 +12,7 @@ int main(void)
 char alpahbet[26] = "abcdefghijklmnopqrstuvwxyz";
 
 int i = 0;
+int j = 0;
 while (i < 26)
 {
 putchar(alpahbet[i]);
