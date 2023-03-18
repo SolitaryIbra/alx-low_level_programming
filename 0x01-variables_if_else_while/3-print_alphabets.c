@@ -1,29 +1,28 @@
-
 #include <stdio.h>
 /**
 * main - functio nto print the alphabet in lower case.
 *
 * Description: This function is only main to print the
-* alpahabet in new line lower-cased
+* alpahabet in new line lower-cased and upper-cased
 * Return: 0
 */
 int main(void)
 {
-char alpahbet[26] = "abcdefghijklmnopqrstuvwxyz";
 
-int i = 0;
-int j = 0;
-while (i < 26)
+int ch = 97;
+while (ch < (97+26))
 {
-putchar(alpahbet[i]);
-i++;
+putchar(ch);
+ch++;
 }
-  
-while (j < 26)
+
+ch = 65;
+
+while (ch < (65+26))
 {
-putchar(toupper(alpahbet[i]));
-j++;
+putchar(ch);
+ch++;
 }
-putchar('\n');
+
 return (0);
 }
