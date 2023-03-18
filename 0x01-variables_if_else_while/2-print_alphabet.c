@@ -16,6 +16,6 @@ while (i < 26)
 putchar(alpahbet[i]);
 i++;
 }
-putchar('\n')
+putchar('\n');
 return (0);
 }
