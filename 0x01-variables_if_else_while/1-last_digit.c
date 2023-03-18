@@ -6,7 +6,7 @@
 * checks if greater than 5 or else smaller or equal to 0
 *
 * Description: In main function checks the value of the last nummebr by
-* moduling the initial number and checks if it is greater 
+* moduling the initial number and checks if it is greater
 * than the current number
 * Return: 0
 *
@@ -21,7 +21,7 @@ n = rand() - RAND_MAX / 2;
 last_num = n % 10;
 
 printf("Last digit of %d is %d ", n, last_num);
-	
+
 if (last_num > 5)
 {
 	printf("and is greater than 5\n");
