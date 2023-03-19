@@ -16,7 +16,7 @@ int i = 0;
 
 while (i < 26)
 {
-if(i != 4 && i != 16)
+if (i != 4 && i != 16)
 putchar(ch);
 
 ch++;
