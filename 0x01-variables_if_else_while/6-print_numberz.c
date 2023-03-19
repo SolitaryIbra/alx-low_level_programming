@@ -13,7 +13,7 @@ int i = 0;
 int ch = 48;
 while (i < 10)
 {
-putchar(ch+i);
+putchar(ch + i);
 i++;
 }
 putchar('\n');
