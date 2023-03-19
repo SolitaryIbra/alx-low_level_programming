@@ -12,15 +12,19 @@
 */
 int main(void)
 {
-  char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
-  int i = 0;
-  while (i < 26)
-  {
-    if (alphabet[i] == 'e' || alphabet[i] == 'q')
-    {
-    putchar(alphabet[i]);
-    }
-    i++;
-  }
-  return (0);
+char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
+int i = 0;
+while (i < 26)
+{
+if (alphabet[i] == 'e' || alphabet[i] == 'q')
+{
+continue;
+}
+else
+{
+putchar(alphabet[i]);      
+}
+i++;
+}
+return (0);
 }
