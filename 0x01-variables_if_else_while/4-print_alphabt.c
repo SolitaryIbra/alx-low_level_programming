@@ -12,7 +12,7 @@
 */
 int main(void)
 {
-  char alphabert[26] = "abcdefghijklmnopqrstuvwxyz";
+  char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
   int i;
   while (i < 26)
   {
