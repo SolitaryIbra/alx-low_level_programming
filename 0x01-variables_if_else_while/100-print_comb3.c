@@ -1,10 +1,9 @@
 #include <stdio.h>
 
-/*
-* main - This main of the program
-*
+/**
+* main - program returns the possable combinations
 * Description: This program prints the required possable combination
-* of numbers from 0 to 10 without repeating the same number.
+* of numbers from 0 to 10 without repeating the same number
 * Return: 0
 */
 int main(void)
