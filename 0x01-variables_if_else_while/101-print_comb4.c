@@ -2,7 +2,6 @@
 
 /**
 * main - This program Prints the combination of all numbers in three
-* 
 * Description: This is how to print thhree numbers in a consecuative
 * order without doing that again in different order
 * Return: 0
@@ -15,7 +14,7 @@ while (i < 58)
 {
 j = i + 1;
 
-while(j < 58)
+while (j < 58)
 {
 k = j + 1;
 
@@ -36,5 +35,6 @@ j++;
 
 i++;
 }
+  putchar('\n');
 return (0);
 }
