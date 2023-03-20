@@ -23,7 +23,7 @@ while (k < 58)
 putchar(i);
 putchar(j);
 putchar(k);
-if (k != 58)
+if (i != 55  || j != 56 || k != 57)
 {
 putchar(',');
 putchar(' ');
