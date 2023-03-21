@@ -2,7 +2,8 @@
 
 /**
 * _islower - This program checks if number is
-* uppercase or lower case
+* uppercase or lower case.
+* @c: The prarmeter that will be checked for lowercasing.
 * Return: 0 or 1
 */
 int _islower(int c)
