@@ -8,14 +8,14 @@
 */
 int main(void)
 {
-char text[8] = "_putchar";
-int i;
-while (i < 8)
-{
-putchar(text[i]);
-i++;
-}
-putchar('\n');
-
-return (0);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
 }
