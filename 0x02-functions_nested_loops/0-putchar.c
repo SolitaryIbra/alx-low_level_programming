@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
 * main - This code prints "_putcahr"
