@@ -8,13 +8,14 @@
 */
 int main(void)
 {
-char text[12] = "_putchar";
+char text[8] = "_putchar";
 int i;
-while (text[i] != '\0')
+while (i < 8)
 {
 putchar(text[i]);
 i++;
 }
+putchar('\n');
 
 return (0);
 }
