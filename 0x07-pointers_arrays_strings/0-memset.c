@@ -6,13 +6,13 @@
 */
 char* _memset(char* fill, char b, unsigned int lim)
 {
-	unsigned int num = 0;
+unsigned int num = 0;
 
-	while (num < lim)
-	{
-	fill[num] = b;
-	num++;
-	}
+while (num < lim)
+{
+fill[num] = b;
+num++;
+}
 
-	return (fill);
+return (fill);
 }
