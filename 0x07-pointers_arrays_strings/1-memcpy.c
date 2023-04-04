@@ -16,5 +16,5 @@ to_ptr[num] = from_ptr[num];
 num++;
 }
 
-return (from_ptr);
+return (to_ptr);
 }
