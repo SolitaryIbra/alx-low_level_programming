@@ -8,9 +8,4 @@ int _putchar(char);
 char *_memset(char*, char, unsigned int);
 
 
-
-
-
-
-
-#endif
+#endif  /*MAIN_H*/
