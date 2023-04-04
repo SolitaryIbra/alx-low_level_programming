@@ -6,15 +6,15 @@
 *
 * Return: Of type pointer to another pointer
 */
-char *_memcpy(char* to_ptr, char* from_ptr, unsigned int n)
+char* _memcpy(char* to_ptr, char* from_ptr, unsigned int n)
 {
-	unsigned int num = 0;
+unsigned int num = 0;
 
-	while (num < n)
-	{
-		to_ptr[num] = from_ptr[num];
-		num++;
-	}
+while (num < n)
+{
+to_ptr[num] = from_ptr[num];
+num++;
+}
 
-	return (from_ptr);
+return (from_ptr);
 }
