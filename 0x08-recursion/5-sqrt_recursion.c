@@ -2,6 +2,8 @@
 
 /**
  * check - checks the square root
+ * @num1: an integer
+ * @num2: an integer
  * Return: num
  */
 int check(int num1, int num2)
@@ -15,6 +17,7 @@ int check(int num1, int num2)
 
 /**
  * _sqrt_recursion - returns the natural square root of a number
+ * @num: an integer
  * Return: natural square root or -1
  */
 int _sqrt_recursion(int num)
