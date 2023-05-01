@@ -2,6 +2,7 @@
 
 /**
  * _strlen_recursion - length of string.
+ * @str: a string
  * Return: the length of string
  */
 int _strlen_recursion(char *str)
@@ -13,6 +14,9 @@ int _strlen_recursion(char *str)
 
 /**
  * pal_checker - check if str is palindrome.
+ * @str: a string
+ * @i: an integer
+ * @j: an integer
  * Return: 1 if palindrome, 0 if not.
  */
 int pal_checker(char *str, int i, int j)
@@ -28,6 +32,7 @@ int pal_checker(char *str, int i, int j)
 
 /**
  * is_palindrome - check if str is palindrome
+ * @str: a string
  * Return: 1 if prime, 0 if not.
  */
 int is_palindrome(char *str)
