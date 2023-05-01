@@ -3,6 +3,8 @@
 
 /**
  * check - checks if num is prime
+  * @num1: an integer
+  * @num2: an integer
  * Return: num
  */
 int check(int num1, int num2)
@@ -17,6 +19,7 @@ int check(int num1, int num2)
 
 /**
  * is_prime_number - states if number is prime
+ * @num: an integer
  * Return: num
  */
 int is_prime_number(int num)
