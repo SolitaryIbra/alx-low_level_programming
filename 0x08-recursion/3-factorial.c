@@ -2,6 +2,7 @@
 
 /**
  * factorial - factorial of num
+ * @num: an integer
  * Return: num
  */
 int factorial(int num)
