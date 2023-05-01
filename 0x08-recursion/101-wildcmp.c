@@ -18,8 +18,8 @@ if (str1[i] == '\0' && str2[j] == '*')
 return (str_checker(str1, str2, i, j + 1));
 if (str2[j] == '*')
 return (str_checker(str1, str2, i + 1, j) 
-	||
-	str_checker(str1, str2, i, j + 1));
+||
+str_checker(str1, str2, i, j + 1));
 return (0);
 }
 
