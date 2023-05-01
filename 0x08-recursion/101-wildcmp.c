@@ -2,6 +2,10 @@
 
 /**
  * str_checker - checks identical two strings.
+ * @str1: a string
+ * @str2: a string
+ * @i: an integer
+ * @j: an integer
  * Return: 1 if palindrome, 0 if not.
  */
 int str_checker(char *str1, char *str2, int i, int j)
@@ -19,6 +23,8 @@ int str_checker(char *str1, char *str2, int i, int j)
 
 /**
  * wildcmp - check if identical strings
+ * @str1: a string
+ * @str2: a string
  * Return: 1 if are considered identical.
  */
 int wildcmp(char *str1, char *str2)
