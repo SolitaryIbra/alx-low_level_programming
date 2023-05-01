@@ -10,15 +10,15 @@
  */
 int str_checker(char *str1, char *str2, int i, int j)
 {
-	if (str1[i] == '\0' && str2[j] == '\0')
-		return (1);
-	if (str1[i] == str2[j])
-		return (str_checker(str1, str2, i + 1, j + 1));
-	if (str1[i] == '\0' && str2[j] == '*')
-		return (str_checker(str1, str2, i, j + 1));
-	if (str2[j] == '*')
-	return (str_checker(str1, str2, i + 1, j) || str_checker(str1, str2, i, j + 1));
-	return (0);
+if (str1[i] == '\0' && str2[j] == '\0')
+return (1);
+if (str1[i] == str2[j])
+return (str_checker(str1, str2, i + 1, j + 1));
+if (str1[i] == '\0' && str2[j] == '*')
+return (str_checker(str1, str2, i, j + 1));
+if (str2[j] == '*')
+return (str_checker(str1, str2, i + 1, j) || str_checker(str1, str2, i, j + 1));
+return (0);
 }
 
 /**
