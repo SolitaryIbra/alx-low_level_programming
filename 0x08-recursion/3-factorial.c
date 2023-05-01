@@ -8,7 +8,7 @@
 int factorial(int num)
 {
 int fac;
-	
+
 if (num == 0)
 {
 return (1);
