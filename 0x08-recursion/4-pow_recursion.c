@@ -2,6 +2,8 @@
 
 /**
  * _pow_recursion - power
+ * @num1: an integer
+ * @num2: an integer
  * Return: num
  */
 int _pow_recursion(int num1, int num2)
