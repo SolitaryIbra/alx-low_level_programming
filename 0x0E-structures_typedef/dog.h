@@ -1,5 +1,5 @@
-#ifndef DOG
-#define DOG
+#ifndef _DOG_H_
+#define _DOG_H_
 
 /**
 * struct dog - dog class
@@ -26,4 +26,4 @@ dog_t *new_dog(char*, float, char*);
 
 void free_dog(dog_t *d);
 
-#endif
+#endif /*_DOG_H*/
