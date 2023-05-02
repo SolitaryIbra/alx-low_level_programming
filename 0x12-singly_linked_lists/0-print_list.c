@@ -11,7 +11,7 @@
 size_t print_list(const list_t *obj)
 {
 	int lim = 0;
-	
+
 	while (obj)
 	{
 		if (obj->str == NULL)
