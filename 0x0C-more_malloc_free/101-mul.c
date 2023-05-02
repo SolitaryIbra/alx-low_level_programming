@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _print - output moving the string to the left by length
+* _print - output a string, removing leading zeros
 * @strname: a string
 * @length: a string
 *
@@ -26,24 +26,22 @@ free(strname);
 }
 
 /**
-* mul - output a string and a char into a new location
+* mul - multiply a string and a char, store result in a new string
 * @n: a char
 * @num: a string
 * @num_location: an integer
-* @destination: a char
+* @destination: a string
 * @destination_location: an integer
 *
-* Return: a Pointer
+* Return: a pointer to the destination string, or NULL on failure
 */
-char *mul(char n, char *num,
-int num_location, char *destination,
+char *mul(char n, char *num, int num_location, char *destination,
 int destination_location)
 {
 int num2, k, mul, mulrem, add, addrem;
 
 mulrem = addrem = 0;
-for (num2 = num_location,
-k = destination_location;
+for (num2 = num_location, k = destination_location;
 num2 >= 0; num2--, k--)
 {
 mul = (n - '0') * (num[num2] - '0') + mulrem;
@@ -66,10 +64,10 @@ return (destination);
 }
 
 /**
-* check_for_digits - output pseudo boolean
-* @argumentv: a Pointer
+* check_for_digits - check if arguments contain only digits
+* @argumentv: a pointer to a string array
 *
-* Return: 0
+* Return: 0 if arguments contain only digits, 1 otherwise
 */
 int check_for_digits(char **argumentv)
 {
@@ -87,9 +85,9 @@ return (0);
 }
 
 /**
-* init - output a string
-* @strname: a string 
-* @length: an int
+* init - initialize a string with '0's
+* @strname: a string
+* @length: an integer
 *
 * Return: void
 */
@@ -103,13 +101,12 @@ strname[num1] = '\0';
 }
 
 /**
-* main - output multiply two numbers
-* @argc: args number
-* @argv: arg vector
+* main - Multiply two numbers
+* @argc: The number of arguments passed to the program
+* @argv: An array of pointers to the arguments
 *
-* Return: zero, or exit status of 98 if failure
+* Return: 0 on success, 98 on failure
 */
-
 int main(int argc, char *argv[])
 {
 int length1, length2, lengthnum, ti, num1;
@@ -123,11 +120,13 @@ for (ti = 0; cation[ti]; ti++)
 _putchar(cation[ti]);
 exit(98);
 }
+
 for (length1 = 0; argv[1][length1]; length1++)
 ;
 for (length2 = 0; argv[2][length2]; length2++)
 ;
 lengthnum = length1 + length2 + 1;
+
 a = malloc(lengthnum * sizeof(char));
 if (a == NULL)
 {
@@ -135,7 +134,9 @@ for (ti = 0; cation[ti]; ti++)
 _putchar(cation[ti]);
 exit(98);
 }
+
 init(a, lengthnum - 1);
+
 for (ti = length2 - 1, num1 = 0; ti >= 0; ti--, num1++)
 {
 t = mul(argv[2][ti], argv[1], length1 - 1, a, (lengthnum - 2) - num1);
@@ -147,6 +148,7 @@ free(a);
 exit(98);
 }
 }
+
 _print(a, lengthnum - 1);
 return (0);
 }
