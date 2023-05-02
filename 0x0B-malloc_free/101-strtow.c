@@ -15,10 +15,10 @@ char **strtow(char *strname)
 int i, flag, length;
 char **sentence;
 
-if (strname == NULL 
-|| 
-strname[0] == '\0' 
-|| 
+if (strname == NULL
+||
+strname[0] == '\0'
+||
 (strname[0] == ' ' && strname[1] == '\0'))
 return (NULL);
 
