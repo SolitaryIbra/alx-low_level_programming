@@ -2,19 +2,19 @@
 #define DOG
 
 /**
- * struct dog - dog class
- *
- * @name: Dog Name
- *
- * @age: Dog Age
- *
- * @owner: Dog Owner
- */
+* struct dog - dog class
+*
+* @name: Dog Name
+*
+* @age: Dog Age
+*
+* @owner: Dog Owner
+*/
 struct dog
 {
-	char *name;
-	float age;
-	char *owner;
+char *name;
+float age;
+char *owner;
 };
 
 void init_dog(struct dog*, char*, float, char*);
