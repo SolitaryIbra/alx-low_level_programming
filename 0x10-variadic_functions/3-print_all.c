@@ -2,7 +2,7 @@
 
 /**
  * print_all - output args
- * @form: abc
+ * @form: specifies the necessary operations
  * Return: Void
  */
 
@@ -23,7 +23,7 @@ case 'c':
 printf("%c", va_arg(vue_vector, int));
 breaker = 0;
 break;
-case 'num':
+case 'i':
 printf("%i", va_arg(vue_vector, int));
 breaker = 0;
 break;
