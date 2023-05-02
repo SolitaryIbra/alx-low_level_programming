@@ -35,7 +35,9 @@ void _print(char *strname, int length)
  *
  * Return: a Pointer
  */
-char *mul(char n, char *num, int num_location, char *destination, int destination_location)
+char *mul(char n, char *num,
+int num_location, char *destination,
+int destination_location)
 {
 	int num2, k, mul, mulrem, add, addrem;
 
