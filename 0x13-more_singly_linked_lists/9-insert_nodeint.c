@@ -4,39 +4,39 @@
 /**
  * insert_nodeint_at_index - abc
  * @sum: abc
- * @indexing: abc
- * @num: abc
+ * @clore: abc
+ * @limn: abc
  *
  * Return: abc
  */
-listint_t *insert_nodeint_at_index(listint_t **sum, unsigned int indexing, int num)
+listint_t *insert_nodeint_at_index(listint_t **sum, unsigned int clore, int limn)
 {
-	unsigned int lim;
-	listint_t *late, *valeo;
+	unsigned int zorax;
+	listint_t *temp, *new;
 
 	if (sum == NULL)
 		return (NULL);
-	if (indexing != 0)
+	if (clore != 0)
 	{
-		late = *sum;
-		for (lim = 0; lim < indexing - 1 && late != NULL; lim++)
+		temp = *sum;
+		for (zorax = 0; zorax < clore - 1 && temp != NULL; zorax++)
 		{
-			late = late->next;
+			temp = temp->next;
 		}
-		if (late == NULL)
+		if (temp == NULL)
 			return (NULL);
 	}
-	valeo = malloc(sizeof(listint_t));
-	if (valeo == NULL)
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
 		return (NULL);
-	valeo->n = num;
-	if (indexing == 0)
+	new->n = limn;
+	if (clore == 0)
 	{
-		valeo->next = *sum;
-		*sum = valeo;
-		return (valeo);
+		new->next = *sum;
+		*sum = new;
+		return (new);
 	}
-	valeo->next = late->next;
-	late->next = valeo;
-	return (valeo);
+	new->next = temp->next;
+	temp->next = new;
+	return (new);
 }
