@@ -2,18 +2,18 @@
 
 /**
  * sum_listint - abc
- * @sum: abc
+ * @num: abc
  *
  * Return: abc
  */
-int sum_listint(listint_t *sum)
+int sum_listint(listint_t *num)
 {
-	int sum = 0;
+int vardic = 0;
 
-	while (sum != NULL)
-	{
-		sum += sum->n;
-		sum = sum->next;
-	}
-	return (sum);
+while (num != NULL)
+{
+vardic += num->n;
+num = num->next;
+}
+return (vardic);
 }
