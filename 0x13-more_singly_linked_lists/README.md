@@ -1,3 +1,3 @@
-This Is The more singly linked lists Task.
+This Is The variadic functions Task.
 Author: Ibrahim Mohamed.
 ALX SE cohor 13.
