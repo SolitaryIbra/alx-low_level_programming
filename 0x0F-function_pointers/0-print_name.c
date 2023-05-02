@@ -12,4 +12,5 @@ void print_name(char *identity, void (*func)(char *))
 if (identity != NULL && func != NULL)
 
 func(identity);
+
 }
