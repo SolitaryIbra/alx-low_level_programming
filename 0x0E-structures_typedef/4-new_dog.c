@@ -21,7 +21,7 @@ return (NULL);
 for (x = 0; name[x]; x++)
 ;
 x++;
-obj->name = malloc(x * sizeof(char));
+obj->name = malloc(x *sizeof(char));
 if (obj->name == NULL)
 {
 free(obj);
@@ -33,7 +33,7 @@ obj->age = age;
 for (y = 0; owner[y]; y++)
 ;
 y++;
-obj->owner = malloc(y * sizeof(char));
+obj->owner = malloc(y *sizeof(char));
 if (obj->owner == NULL)
 {
 free(obj->name);
