@@ -11,6 +11,7 @@
 int* array_range(int begin, int end)
 {
 int *ptr_to_int;
+
 int num, length;
 
 if (begin > end)
