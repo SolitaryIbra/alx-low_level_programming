@@ -120,23 +120,20 @@ for (ti = 0; cation[ti]; ti++)
 _putchar(cation[ti]);
 exit(98);
 }
-
 for (length1 = 0; argv[1][length1]; length1++)
 ;
 for (length2 = 0; argv[2][length2]; length2++)
 ;
 lengthnum = length1 + length2 + 1;
 
-a = malloc(lengthnum * sizeof(char));
+a = malloc(lengthnum *sizeof(char));
 if (a == NULL)
 {
 for (ti = 0; cation[ti]; ti++)
 _putchar(cation[ti]);
 exit(98);
 }
-
 init(a, lengthnum - 1);
-
 for (ti = length2 - 1, num1 = 0; ti >= 0; ti--, num1++)
 {
 t = mul(argv[2][ti], argv[1], length1 - 1, a, (lengthnum - 2) - num1);
@@ -148,7 +145,6 @@ free(a);
 exit(98);
 }
 }
-
 _print(a, lengthnum - 1);
 return (0);
 }
