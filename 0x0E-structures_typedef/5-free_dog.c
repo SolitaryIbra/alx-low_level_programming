@@ -13,5 +13,6 @@ if (obj)
 free(obj->name);
 free(obj->owner);
 free(obj);
+
 }
 }
