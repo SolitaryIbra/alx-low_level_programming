@@ -8,7 +8,7 @@
 *
 * Return: pointer to the new array
 */
-int* array_range(int begin, int end)
+int *array_range(int begin, int end)
 {
 int *ptr_to_int;
 
