@@ -15,24 +15,26 @@ void print_abi(unsigned char *);
 void print_osabi(unsigned char *);
 void print_type(unsigned int, unsigned char *);
 void print_entry(unsigned long int, unsigned char *);
-void close_elf(int);
+void close_elf(int elf);
 
 /**
  * check_elf - aabbcc
- * @enum_indentation: aabbcc
+ * @indentation_by_e: aabbcc
+ *
+ * Description: aabbcc
  */
-void check_elf(unsigned char *enum_indentation)
+void check_elf(unsigned char *indentation_by_e)
 {
-	int myindx;
+	int index;
 
-	for (myindx = 0; myindx < 4; myindx++)
+	for (index = 0; index < 4; index++)
 	{
-		if (enum_indentation[myindx] != 127 &&
-		    enum_indentation[myindx] != 'E' &&
-		    enum_indentation[myindx] != 'L' &&
-		    enum_indentation[myindx] != 'F')
+		if (indentation_by_e[index] != 127 &&
+		    indentation_by_e[index] != 'E' &&
+		    indentation_by_e[index] != 'L' &&
+		    indentation_by_e[index] != 'F')
 		{
-			dprintf(STDERR_FILENO, "Error: Not an elf file\n");
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
 		}
 	}
@@ -40,19 +42,21 @@ void check_elf(unsigned char *enum_indentation)
 
 /**
  * print_magic - aabbcc
- * @enum_indentation: aabbcc
+ * @indentation_by_e: aabbcc
+ *
+ * Description: aabbcc
  */
-void print_magic(unsigned char *enum_indentation)
+void print_magic(unsigned char *indentation_by_e)
 {
-	int myindx;
+	int index;
 
 	printf("  Magic:   ");
 
-	for (myindx = 0; myindx < EI_NIDENT; myindx++)
+	for (index = 0; index < EI_NIDENT; index++)
 	{
-		printf("%02x", enum_indentation[myindx]);
+		printf("%02x", indentation_by_e[index]);
 
-		if (myindx == EI_NIDENT - 1)
+		if (index == EI_NIDENT - 1)
 			printf("\n");
 		else
 			printf(" ");
@@ -60,14 +64,14 @@ void print_magic(unsigned char *enum_indentation)
 }
 
 /**
- * print_class -aabbcc
- * @enum_indentation: aabbcc
+ * print_class - aabbcc
+ * @indentation_by_e: aabbcc
  */
-void print_class(unsigned char *enum_indentation)
+void print_class(unsigned char *indentation_by_e)
 {
 	printf("  Class:                             ");
 
-	switch (enum_indentation[EI_CLASS])
+	switch (indentation_by_e[EI_CLASS])
 	{
 	case ELFCLASSNONE:
 		printf("none\n");
@@ -79,19 +83,19 @@ void print_class(unsigned char *enum_indentation)
 		printf("ELF64\n");
 		break;
 	default:
-		printf("<unknown: %x>\n", enum_indentation[EI_CLASS]);
+		printf("<unknown: %x>\n", indentation_by_e[EI_CLASS]);
 	}
 }
 
 /**
  * print_data - aabbcc
- * @enum_indentation: aabbcc
+ * @indentation_by_e: aabbcc
  */
-void print_data(unsigned char *enum_indentation)
+void print_data(unsigned char *indentation_by_e)
 {
 	printf("  Data:                              ");
 
-	switch (enum_indentation[EI_DATA])
+	switch (indentation_by_e[EI_DATA])
 	{
 	case ELFDATANONE:
 		printf("none\n");
@@ -103,20 +107,20 @@ void print_data(unsigned char *enum_indentation)
 		printf("2's complement, big endian\n");
 		break;
 	default:
-		printf("<unknown: %x>\n", enum_indentation[EI_CLASS]);
+		printf("<unknown: %x>\n", indentation_by_e[EI_CLASS]);
 	}
 }
 
 /**
  * print_version - aabbcc
- * @enum_indentation: aabbcc
+ * @indentation_by_e: aabbcc
  */
-void print_version(unsigned char *enum_indentation)
+void print_version(unsigned char *indentation_by_e)
 {
 	printf("  Version:                           %d",
-	       enum_indentation[EI_VERSION]);
+	       indentation_by_e[EI_VERSION]);
 
-	switch (enum_indentation[EI_VERSION])
+	switch (indentation_by_e[EI_VERSION])
 	{
 	case EV_CURRENT:
 		printf(" (current)\n");
@@ -129,13 +133,13 @@ void print_version(unsigned char *enum_indentation)
 
 /**
  * print_osabi - aabbcc
- * @enum_indentation: aabbcc
+ * @indentation_by_e: aabbcc
  */
-void print_osabi(unsigned char *enum_indentation)
+void print_osabi(unsigned char *indentation_by_e)
 {
 	printf("  OS/ABI:                            ");
 
-	switch (enum_indentation[EI_OSABI])
+	switch (indentation_by_e[EI_OSABI])
 	{
 	case ELFOSABI_NONE:
 		printf("UNIX - System V\n");
@@ -168,33 +172,33 @@ void print_osabi(unsigned char *enum_indentation)
 		printf("Standalone App\n");
 		break;
 	default:
-		printf("<unknown: %x>\n", enum_indentation[EI_OSABI]);
+		printf("<unknown: %x>\n", indentation_by_e[EI_OSABI]);
 	}
 }
 
 /**
  * print_abi - aabbcc
- * @enum_indentation: aabbcc
+ * @indentation_by_e: aabbcc
  */
-void print_abi(unsigned char *enum_indentation)
+void print_abi(unsigned char *indentation_by_e)
 {
 	printf("  ABI Version:                       %d\n",
-	       enum_indentation[EI_ABIVERSION]);
+	       indentation_by_e[EI_ABIVERSION]);
 }
 
 /**
  * print_type - aabbcc
- * @e_type: aabbcc
- * @enum_indentation: aabbcc
+ * @the_e_type: aabbcc
+ * @indentation_by_e: aabbcc
  */
-void print_type(unsigned int e_type, unsigned char *enum_indentation)
+void print_type(unsigned int theetype, unsigned char *indentation_by_e)
 {
-	if (enum_indentation[EI_DATA] == ELFDATA2MSB)
-		e_type >>= 8;
+	if (indentation_by_e[EI_DATA] == ELFDATA2MSB)
+		theetype >>= 8;
 
 	printf("  Type:                              ");
 
-	switch (e_type)
+	switch (theetype)
 	{
 	case ET_NONE:
 		printf("NONE (None)\n");
@@ -212,31 +216,31 @@ void print_type(unsigned int e_type, unsigned char *enum_indentation)
 		printf("CORE (Core file)\n");
 		break;
 	default:
-		printf("<unknown: %x>\n", e_type);
+		printf("<unknown: %x>\n", theetype);
 	}
 }
 
 /**
  * print_entry - aabbcc
- * @myelectronicentry: aabbcc
- * @enum_indentation: aabbcc
+ * @enter_by_e: aabbcc
+ * @indentation_by_e: aabbcc
  */
-void print_entry(unsigned long int myelectronicentry, unsigned char *enum_indentation)
+void print_entry(unsigned long int enter_by_e, unsigned char *indentation_by_e)
 {
 	printf("  Entry point address:               ");
 
-	if (enum_indentation[EI_DATA] == ELFDATA2MSB)
+	if (indentation_by_e[EI_DATA] == ELFDATA2MSB)
 	{
-		myelectronicentry = ((myelectronicentry << 8) & 0xFF00FF00) |
-			  ((myelectronicentry >> 8) & 0xFF00FF);
-		myelectronicentry = (myelectronicentry << 16) | (myelectronicentry >> 16);
+		enter_by_e = ((enter_by_e << 8) & 0xFF00FF00) |
+			  ((enter_by_e >> 8) & 0xFF00FF);
+		enter_by_e = (enter_by_e << 16) | (enter_by_e >> 16);
 	}
 
-	if (enum_indentation[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", (unsigned int)myelectronicentry);
+	if (indentation_by_e[EI_CLASS] == ELFCLASS32)
+		printf("%#x\n", (unsigned int)enter_by_e);
 
 	else
-		printf("%#lx\n", myelectronicentry);
+		printf("%#lx\n", enter_by_e);
 }
 
 /**
@@ -267,10 +271,10 @@ void close_elf(int elf)
 int main(int __attribute__((__unused__)) argumentc, char *argumentv[])
 {
 	Elf64_Ehdr *header;
-	int myopen, myreading;
+	int o, r;
 
-	myopen = open(argumentv[1], O_RDONLY);
-	if (myopen == -1)
+	o = open(argumentv[1], O_RDONLY);
+	if (o == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argumentv[1]);
 		exit(98);
@@ -278,31 +282,31 @@ int main(int __attribute__((__unused__)) argumentc, char *argumentv[])
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
-		close_elf(myopen);
+		close_elf(o);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argumentv[1]);
 		exit(98);
 	}
-	myreading = read(myopen, header, sizeof(Elf64_Ehdr));
-	if (myreading == -1)
+	r = read(o, header, sizeof(Elf64_Ehdr));
+	if (r == -1)
 	{
 		free(header);
-		close_elf(myopen);
+		close_elf(o);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argumentv[1]);
 		exit(98);
 	}
 
-	check_elf(header->enum_indentation);
-	printf("elf Header:\n");
-	print_magic(header->enum_indentation);
-	print_class(header->enum_indentation);
-	print_data(header->enum_indentation);
-	print_version(header->enum_indentation);
-	print_osabi(header->enum_indentation);
-	print_abi(header->enum_indentation);
-	print_type(header->e_type, header->enum_indentation);
-	print_entry(header->myelectronicentry, header->enum_indentation);
+	check_elf(header->indentation_by_e);
+	printf("ELF Header:\n");
+	print_magic(header->indentation_by_e);
+	print_class(header->indentation_by_e);
+	print_data(header->indentation_by_e);
+	print_version(header->indentation_by_e);
+	print_osabi(header->indentation_by_e);
+	print_abi(header->indentation_by_e);
+	print_type(header->theetype, header->indentation_by_e);
+	print_entry(header->enter_by_e, header->indentation_by_e);
 
 	free(header);
-	close_elf(myopen);
+	close_elf(o);
 	return (0);
 }
