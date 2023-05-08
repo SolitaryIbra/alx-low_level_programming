@@ -1,4 +1,4 @@
-#include <dwarf.h>
+#include <elf.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -32,7 +32,7 @@ void check_elf(unsigned char *enum_indentation)
 		    enum_indentation[myindx] != 'L' &&
 		    enum_indentation[myindx] != 'F')
 		{
-			dprintf(STDERR_FILENO, "Error: Not an dwarf file\n");
+			dprintf(STDERR_FILENO, "Error: Not an elf file\n");
 			exit(98);
 		}
 	}
@@ -241,16 +241,16 @@ void print_entry(unsigned long int myelectronicentry, unsigned char *enum_indent
 
 /**
  * close_elf - aabbcc
- * @dwarf: aabbcc
+ * @elf: aabbcc
  *
  * Description: aabbcc
  */
-void close_elf(int dwarf)
+void close_elf(int elf)
 {
-	if (close(dwarf) == -1)
+	if (close(elf) == -1)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", dwarf);
+			"Error: Can't close fd %d\n", elf);
 		exit(98);
 	}
 }
@@ -292,7 +292,7 @@ int main(int __attribute__((__unused__)) argumentc, char *argumentv[])
 	}
 
 	check_elf(header->enum_indentation);
-	printf("dwarf Header:\n");
+	printf("elf Header:\n");
 	print_magic(header->enum_indentation);
 	print_class(header->enum_indentation);
 	print_data(header->enum_indentation);
